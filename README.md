@@ -15,6 +15,46 @@ Reference article: Tirosh et al., 2016 - Dissecting the multicellular ecosystem 
 
 ---
 
+# Usage
+
+This pipeline can be run reproducibly with **Nextflow** using Docker, Singularity/Apptainer, Conda, or local execution.
+
+---
+
+## Run the entire workflow
+
+**Docker (or Singularity/Apptainer fallback on HPC):**
+```bash
+nextflow run main.nf -profile docker
+```
+
+Singularity/Apptainer directly:
+
+```bash
+nextflow run main.nf -profile apptainer
+```
+
+Conda/local environment:
+```bash
+nextflow run main.nf -profile conda
+```
+
+Local execution without containers:
+```bash
+nextflow run main.nf -profile standard
+```
+
+## Pass input parameters
+
+You can override default parameters defined in nextflow.config from the command line:
+```bash
+nextflow run main.nf -profile docker --input_file data/raw/GSE72056_melanoma_single_cell_revised_v2.txt.gz --outdir results
+```
+* `--input_file` → Path to the input `.txt.gz` file
+* `--outdir` → Output directory for processed data and results
+
+---
+
 # Project Overview
 
 This repository contains a modular, reproducible workflow for analyzing melanoma scRNA-seq data, including both reanalysis of published results and extended trajectory modeling.
@@ -64,17 +104,4 @@ This repository contains a modular, reproducible workflow for analyzing melanoma
 
 ---
 
-# Usage
-
-* **Run all scripts sequentially:**
-
-```bash
-Rscript run_all.R
-```
-
-* **Run individual steps:**
-
-  * Scripts can be run independently in the order: `00` → `01` → `02` → `03` → `04` → `05` → `06` → `07`.
-
-* Ensure that required packages (`Seurat`, `SeuratWrappers`, `monocle3`, `dplyr`, `data.table`, etc.) are installed and available.
 
