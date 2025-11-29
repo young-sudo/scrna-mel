@@ -1,6 +1,21 @@
+#!/usr/bin/env nextflow
+
+process process_download_and_read {
+    input:
+    path file_in
+
+    output:
+    path "processed/*"
+
+    script:
+    """
+    Rscript 00-download_and_read.R --input ${file_in}
+    """
+}
+
 workflow {
 
-    Channel.fromPath("data/*.txt.gz")
+    Channel.fromPath(params.input_file)
         | set { raw_data_ch }
 
     process_download_and_read(raw_data_ch)
