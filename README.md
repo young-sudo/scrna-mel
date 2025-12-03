@@ -2,6 +2,11 @@
 
 _by Younginn Park_
 
+![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=R&logoColor=white)
+![Nextflow](https://img.shields.io/badge/Nextflow-23CC85?style=for-the-badge&logo=nextflow&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Apptainer](https://img.shields.io/badge/Apptainer-2E6CE6?style=for-the-badge&logo=linuxcontainers&logoColor=white)
+
 Reproducible melanoma scRNA-seq pipeline combining Tirosh et al. reanalysis with extended trajectory and pseudotime modeling using Seurat and Monocle3.
 
 The dataset used in this project can be found [here](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE72056) with download links ([https](https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE72056&format=file&file=GSE72056%5Fmelanoma%5Fsingle%5Fcell%5Frevised%5Fv2%2Etxt%2Egz)/[ftp](https://ftp.ncbi.nlm.nih.gov/geo/series/GSE72nnn/GSE72056/suppl/GSE72056%5Fmelanoma%5Fsingle%5Fcell%5Frevised%5Fv2.txt.gz)).
