@@ -26,6 +26,30 @@ This pipeline can be run reproducibly with **Nextflow** using Docker, Singularit
 
 ---
 
+## Get the pipeline
+
+Clone the repository:
+
+```bash
+git clone https://github.com/young-sudo/scrna-pipe.git
+cd scrna-pipe
+```
+
+## (Optional) Build the Docker image
+
+If you want to build the container locally instead of pulling it automatically:
+
+```bash
+docker build -t r-scrna-pipe:latest .
+```
+
+You can then run the pipeline using your local image:
+
+```bash
+nextflow run main.nf -profile docker --docker.image r-scrna-pipe:latest
+```
+
+
 ## Run the entire workflow
 
 **Docker (or Singularity/Apptainer fallback on HPC):**
@@ -51,7 +75,8 @@ nextflow run main.nf -profile standard
 
 ## Pass input parameters
 
-You can override default parameters defined in nextflow.config from the command line:
+You can override default parameters:
+
 ```bash
 nextflow run main.nf -profile docker --input_file data/raw/GSE72056_melanoma_single_cell_revised_v2.txt.gz --outdir results
 ```
