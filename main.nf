@@ -1,42 +1,22 @@
 #!/usr/bin/env nextflow
 
-process process_download_and_read {
-    input:
-    path file_in
+nextflow.enable.dsl=2
 
-    output:
-    path "processed/*"
-
-    script:
-    """
-    Rscript 00-download_and_read.R --input ${file_in}
-    """
-}
+include { DOWNLOAD_AND_READ; PREPARE_EXPRESSION; BASIC_QC } from './modules/preprocessing.nf'
+include { SPLIT_MALIGNANT; NONMALIGNANT_DIMREDUCE; NONMALIGNANT_CLUSTER;
+          MALIGNANT_DIMREDUCE; TRAJECTORY } from './modules/analysis.nf'
 
 workflow {
 
-    Channel.fromPath(params.input_file)
-        | set { raw_data_ch }
-
-    process_download_and_read(raw_data_ch)
-        | set { prepared_ch }
-
-    process_prepare_expression(prepared_ch)
-        | set { seurat_input_ch }
-
-    process_basic_qc(seurat_input_ch)
-        | set { split_ch }
-
-    process_split_malignant(split_ch)
-        | set { nonmalignant_ch, malignant_ch }
-
-    process_nonmalignant_dimreduce(nonmalignant_ch)
-        | set { nonmalignant_res_ch }
-
-    process_nonmalignant_clustering(nonmalignant_res_ch)
-
-    process_malignant_dimreduce(malignant_ch)
-        | set { malignant_res_ch }
-
-    process_trajectory(malignant_res_ch)
+    raw_ch = Channel.fromPath(params.input_file)
+    
+    processed_ch = DOWNLOAD_AND_READ(raw_ch)
+    prepared_ch  = PREPARE_EXPRESSION(processed_ch)
+    qc_ch        = BASIC_QC(prepared_ch)
+    
+    (nonmal_ch, mal_ch) = SPLIT_MALIGNANT(qc_ch)
+    nonmal_res = NONMALIGNANT_DIMREDUCE(nonmal_ch)
+    NONMALIGNANT_CLUSTER(nonmal_res)
+    mal_res = MALIGNANT_DIMREDUCE(mal_ch)
+    TRAJECTORY(mal_res)
 }
