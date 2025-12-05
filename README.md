@@ -3,6 +3,8 @@
 _by Younginn Park_
 
 ![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=R&logoColor=white)
+![Seurat](https://img.shields.io/badge/Seurat-b689ee?style=for-the-badge&logo=R&logoColor=white)
+![Monocle3](https://img.shields.io/badge/Monocle3-2c3e50?style=for-the-badge&logo=R&logoColor=white)
 ![Nextflow](https://img.shields.io/badge/Nextflow-DSL2-23CC85?style=for-the-badge&logo=nextflow&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Apptainer](https://img.shields.io/badge/Apptainer-2E6CE6?style=for-the-badge&logo=linuxcontainers&logoColor=white)
