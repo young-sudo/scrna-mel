@@ -2,14 +2,12 @@
 
 _by Younginn Park_
 
-<div>
-  <img src="https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=R&logoColor=white" alt="R">
-  <img src="https://img.shields.io/badge/Seurat-b689ee?style=for-the-badge&logo=R&logoColor=white" alt="Seurat">
-  <img src="https://img.shields.io/badge/Monocle3-2c3e50?style=for-the-badge&logo=R&logoColor=white" alt="Monocle3">
-  <img src="https://img.shields.io/badge/Nextflow-DSL2-23CC85?style=for-the-badge&logo=nextflow&logoColor=white" alt="Nextflow">
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
-  <img src="https://img.shields.io/badge/Apptainer-2E6CE6?style=for-the-badge&logo=linuxcontainers&logoColor=white" alt="Apptainer">
-</div>
+![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=R&logoColor=white)
+![Seurat](https://img.shields.io/badge/Seurat-b689ee?style=for-the-badge&logo=R&logoColor=white)
+![Monocle3](https://img.shields.io/badge/Monocle3-2c3e50?style=for-the-badge&logo=R&logoColor=white)
+![Nextflow](https://img.shields.io/badge/Nextflow-DSL2-23CC85?style=for-the-badge&logo=nextflow&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Apptainer](https://img.shields.io/badge/Apptainer-2E6CE6?style=for-the-badge&logo=linuxcontainers&logoColor=white) 
 
 Reproducible melanoma scRNA-seq pipeline combining Tirosh et al. reanalysis with extended trajectory and pseudotime modeling using Seurat and Monocle3.
 
