@@ -20,6 +20,12 @@ Reference article: Tirosh et al., 2016 - Dissecting the multicellular ecosystem 
   <img src="https://raw.githubusercontent.com/young-sudo/scrna-pipe/main/figures/plot_nm-tsne-vf-cell.png" width="300"/>
 </p>
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/young-sudo/scrna-pipe/main/figures/plot_vf-top10.png" width="300"/>
+  <br>
+  <small>Sample output figures from the pipeline. Top Left: Clustered and annotated malignant tumor cells. Top Right: Clustered and annotated non-malignant cells. Bottom: Plot for variable features with top 10 labeled.</small>
+</p>
+
 ---
 
 # Usage
