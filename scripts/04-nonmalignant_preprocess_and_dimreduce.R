@@ -59,7 +59,7 @@ plot1 <- VariableFeaturePlot(non_malignant)
 plot2 <- LabelPoints(plot = plot1, points = top10, repel = TRUE)
 
 ggsave(
-  filename = file.path(out_dir, "variable_features.png"),
+  filename = file.path(fig_dir, "variable_features.png"),
   plot = plot2,
   width = 8, height = 6, dpi = 300
 )
